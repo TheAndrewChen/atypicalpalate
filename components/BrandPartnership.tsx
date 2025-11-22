@@ -2,39 +2,39 @@ import React from 'react';
 
 const BrandPartnership: React.FC = () => {
   return (
-    <section className="py-24 px-6 relative overflow-hidden">
-      {/* Subtle background glow for ambient depth */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-blue-900/10 blur-[120px] rounded-full pointer-events-none"></div>
+    <section className="py-32 px-6 relative overflow-hidden">
+      {/* Background Glow */}
+      <div className="absolute bottom-[-20%] left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-neon-blue/10 blur-[120px] rounded-full pointer-events-none"></div>
 
       <div className="max-w-3xl mx-auto relative z-10">
         {/* Glassmorphism Card Container */}
-        <div className="relative bg-white/5 backdrop-blur-md border-t border-blue-500/50 rounded-3xl p-8 md:p-12 shadow-2xl">
+        <div className="relative bg-white/5 backdrop-blur-xl border-t border-neon-blue/50 rounded-3xl p-8 md:p-16 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
            {/* Top glowing line accent */}
-           <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-blue-400 to-transparent opacity-50"></div>
+           <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-neon-blue to-transparent opacity-80 shadow-[0_0_10px_rgba(6,182,212,0.8)]"></div>
            
-           <div className="text-center mb-12">
-             <h2 className="text-4xl md:text-5xl font-serif font-medium tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-white via-stone-200 to-stone-400 mb-4">
+           <div className="text-center mb-14 space-y-2">
+             <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-white via-silver to-dim pb-2">
                Join the Expedition
              </h2>
-             <p className="text-stone-400 text-sm md:text-base font-light max-w-md mx-auto leading-relaxed">
+             <p className="text-dim text-sm font-light max-w-md mx-auto tracking-wide">
                We partner selectively with brands that align with our curiosity and quality standards.
              </p>
            </div>
 
-           <form className="space-y-8">
-             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+           <form className="space-y-10">
+             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                <div className="group relative">
                  <input 
                     type="text" 
                     placeholder="Name"
-                    className="w-full bg-transparent border-b border-stone-700 focus:border-blue-500 text-white py-3 px-1 outline-none transition-all duration-300 placeholder:text-stone-600 font-light"
+                    className="w-full bg-transparent border-b border-white/10 focus:border-neon-blue text-white py-4 px-2 outline-none transition-all duration-500 placeholder:text-dim/50 font-light focus:shadow-[0_4px_20px_-5px_rgba(6,182,212,0.2)]"
                  />
                </div>
                <div className="group relative">
                  <input 
                     type="text" 
                     placeholder="Brand / Company"
-                    className="w-full bg-transparent border-b border-stone-700 focus:border-blue-500 text-white py-3 px-1 outline-none transition-all duration-300 placeholder:text-stone-600 font-light"
+                    className="w-full bg-transparent border-b border-white/10 focus:border-neon-blue text-white py-4 px-2 outline-none transition-all duration-500 placeholder:text-dim/50 font-light focus:shadow-[0_4px_20px_-5px_rgba(6,182,212,0.2)]"
                  />
                </div>
              </div>
@@ -43,7 +43,7 @@ const BrandPartnership: React.FC = () => {
                <input 
                   type="email" 
                   placeholder="Email Address"
-                  className="w-full bg-transparent border-b border-stone-700 focus:border-blue-500 text-white py-3 px-1 outline-none transition-all duration-300 placeholder:text-stone-600 font-light"
+                  className="w-full bg-transparent border-b border-white/10 focus:border-neon-blue text-white py-4 px-2 outline-none transition-all duration-500 placeholder:text-dim/50 font-light focus:shadow-[0_4px_20px_-5px_rgba(6,182,212,0.2)]"
                />
              </div>
 
@@ -51,7 +51,7 @@ const BrandPartnership: React.FC = () => {
                <textarea 
                   rows={1}
                   placeholder="Vision (Message)"
-                  className="w-full bg-transparent border-b border-stone-700 focus:border-blue-500 text-white py-3 px-1 outline-none transition-all duration-300 placeholder:text-stone-600 font-light resize-none h-auto min-h-[50px]"
+                  className="w-full bg-transparent border-b border-white/10 focus:border-neon-blue text-white py-4 px-2 outline-none transition-all duration-500 placeholder:text-dim/50 font-light resize-none h-auto min-h-[60px] focus:shadow-[0_4px_20px_-5px_rgba(6,182,212,0.2)]"
                   onInput={(e) => {
                     e.currentTarget.style.height = 'auto';
                     e.currentTarget.style.height = e.currentTarget.scrollHeight + 'px';
@@ -59,10 +59,10 @@ const BrandPartnership: React.FC = () => {
                ></textarea>
              </div>
 
-             <div className="pt-6 flex justify-center">
+             <div className="pt-8 flex justify-center">
                <button 
                  type="button"
-                 className="px-10 py-3 rounded-full bg-stone-100 text-black text-sm font-medium tracking-wide transition-all duration-300 hover:shadow-[0_0_15px_rgba(59,130,246,0.5)] hover:-translate-y-0.5 active:scale-95"
+                 className="px-12 py-4 rounded-full bg-gradient-to-r from-cyan-600 to-emerald-600 text-white text-sm font-semibold tracking-widest uppercase transition-all duration-300 hover:shadow-[0_0_25px_rgba(6,182,212,0.6)] hover:scale-105 active:scale-95 border border-white/10"
                >
                  Connect
                </button>

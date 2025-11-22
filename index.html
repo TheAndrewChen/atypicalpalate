@@ -7,23 +7,25 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
         theme: {
           extend: {
             fontFamily: {
               sans: ['Inter', 'sans-serif'],
-              serif: ['Playfair Display', 'serif'],
             },
             colors: {
-              background: '#1c1917', // Warm Stone 900
-              surface: '#292524', // Warm Stone 800
-              gold: '#d4b996', // Champagne Gold
-              cream: '#f5f5f4', // Stone 100
+              background: '#050505', // Deep Black
+              surface: '#0a0a0a', // Charcoal
+              'neon-blue': '#06b6d4', // Cyan 500
+              'neon-green': '#10b981', // Emerald 500
+              silver: '#e5e7eb', // Gray 200
+              dim: '#9ca3af', // Gray 400
             },
             animation: {
               'fade-in': 'fadeIn 1.5s ease-in-out forwards',
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
             },
             keyframes: {
               fadeIn: {
@@ -37,19 +39,35 @@
     </script>
     <style>
       body {
-        background-color: #1c1917;
-        color: #f5f5f4;
+        background-color: #050505;
+        color: #e5e7eb;
       }
-      .glass-panel {
-        background: rgba(255, 255, 255, 0.03);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.05);
+      /* High-Tech Glass Effect */
+      .glass-card {
+        background: rgba(255, 255, 255, 0.02);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
       }
-      /* Elegant selection color */
+      /* Selection Color */
       ::selection {
-        background: #d4b996;
-        color: #1c1917;
+        background: rgba(6, 182, 212, 0.3);
+        color: #ffffff;
+      }
+      
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #050505; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #333; 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #06b6d4; 
       }
     </style>
   <script type="importmap">

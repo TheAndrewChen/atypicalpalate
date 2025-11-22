@@ -47,33 +47,33 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="py-16 border-t border-white/5 bg-surface text-center">
-      <div className="max-w-5xl mx-auto px-6 flex flex-col items-center gap-10">
+    <footer className="py-20 border-t border-white/5 bg-background text-center relative z-10">
+      <div className="max-w-5xl mx-auto px-6 flex flex-col items-center gap-12">
         
-        <h2 className="text-2xl font-serif italic text-cream">A Typical Palate</h2>
+        <h2 className="text-2xl font-sans font-bold text-silver tracking-tighter">A Typical Palate</h2>
         
-        <div className="flex flex-wrap justify-center gap-4 md:gap-8">
+        <div className="flex flex-wrap justify-center gap-6 md:gap-10">
           {socialLinks.map((link) => (
             <a 
               key={link.name}
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex flex-col items-center gap-2 text-stone-500 hover:text-gold transition-colors"
+              className="group flex flex-col items-center gap-2 text-dim hover:text-neon-blue transition-colors duration-300"
             >
-              <div className="p-3 rounded-full bg-white/5 group-hover:bg-white/10 transition-colors ring-1 ring-white/5 group-hover:ring-gold/20 relative flex items-center justify-center">
+              <div className="p-4 rounded-full bg-white/5 group-hover:bg-white/10 transition-all duration-300 ring-1 ring-white/5 group-hover:ring-neon-blue/40 group-hover:shadow-[0_0_15px_rgba(6,182,212,0.3)] relative flex items-center justify-center">
                 <link.icon className="w-5 h-5" />
               </div>
-              <span className="hidden sm:block text-[10px] uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity -translate-y-2 group-hover:translate-y-0 h-0 overflow-visible absolute mt-14">
+              <span className="hidden sm:block text-[9px] uppercase tracking-[0.2em] opacity-0 group-hover:opacity-100 transition-opacity duration-300 -translate-y-2 group-hover:translate-y-0 h-0 overflow-visible absolute mt-16">
                 {link.name}
               </span>
             </a>
           ))}
         </div>
 
-        <div className="mt-8 text-stone-600 font-light text-sm">
+        <div className="mt-4 text-dim/60 font-light text-xs tracking-wide">
           <p>&copy; {new Date().getFullYear()} Traveler, Palate explorer & Father.</p>
-          <p className="mt-2 text-xs opacity-60">Designed for the curious.</p>
+          <p className="mt-2 opacity-50">Designed for the curious.</p>
         </div>
       </div>
     </footer>
