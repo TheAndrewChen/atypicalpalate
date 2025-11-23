@@ -16,12 +16,12 @@
               sans: ['Inter', 'sans-serif'],
             },
             colors: {
-              background: '#050505', // Deep Black
-              surface: '#0a0a0a', // Charcoal
-              'neon-blue': '#06b6d4', // Cyan 500
-              'neon-green': '#10b981', // Emerald 500
-              silver: '#e5e7eb', // Gray 200
-              dim: '#9ca3af', // Gray 400
+              background: '#0c0a09', // Stone 950 (Warm Black)
+              surface: '#1c1917', // Stone 900 (Warm Dark)
+              'neon-blue': '#38bdf8', // Sky 400 (Softer Blue)
+              'neon-gold': '#fbbf24', // Amber 400 (Warm Glow)
+              silver: '#e7e5e4', // Stone 200 (Warm Silver)
+              dim: '#a8a29e', // Stone 400 (Warm Gray)
             },
             animation: {
               'fade-in': 'fadeIn 1.5s ease-in-out forwards',
@@ -39,19 +39,19 @@
     </script>
     <style>
       body {
-        background-color: #050505;
-        color: #e5e7eb;
+        background-color: #0c0a09;
+        color: #e7e5e4;
       }
-      /* High-Tech Glass Effect */
+      /* High-Tech Glass Effect - Warmer Tint */
       .glass-card {
-        background: rgba(255, 255, 255, 0.02);
+        background: rgba(255, 248, 240, 0.03);
         backdrop-filter: blur(16px);
         -webkit-backdrop-filter: blur(16px);
         border: 1px solid rgba(255, 255, 255, 0.08);
       }
       /* Selection Color */
       ::selection {
-        background: rgba(6, 182, 212, 0.3);
+        background: rgba(251, 191, 36, 0.3);
         color: #ffffff;
       }
       
@@ -60,14 +60,14 @@
         width: 8px;
       }
       ::-webkit-scrollbar-track {
-        background: #050505; 
+        background: #0c0a09; 
       }
       ::-webkit-scrollbar-thumb {
-        background: #333; 
+        background: #292524; 
         border-radius: 4px;
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: #06b6d4; 
+        background: #fbbf24; 
       }
     </style>
   <script type="importmap">
@@ -83,6 +83,5 @@
 </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
   </body>
 </html>

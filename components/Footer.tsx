@@ -13,6 +13,8 @@ const TikTokIcon = ({ className }: { className?: string }) => (
 );
 
 const Footer: React.FC = () => {
+  const currentYear = new Date().getFullYear();
+
   const socialLinks = [
     { 
       name: 'Instagram', 
@@ -59,9 +61,9 @@ const Footer: React.FC = () => {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex flex-col items-center gap-2 text-dim hover:text-neon-blue transition-colors duration-300"
+              className="group flex flex-col items-center gap-2 text-dim hover:text-neon-gold transition-colors duration-300"
             >
-              <div className="p-4 rounded-full bg-white/5 group-hover:bg-white/10 transition-all duration-300 ring-1 ring-white/5 group-hover:ring-neon-blue/40 group-hover:shadow-[0_0_15px_rgba(6,182,212,0.3)] relative flex items-center justify-center">
+              <div className="p-4 rounded-full bg-white/5 group-hover:bg-white/10 transition-all duration-300 ring-1 ring-white/5 group-hover:ring-neon-gold/40 group-hover:shadow-[0_0_15px_rgba(251,191,36,0.3)] relative flex items-center justify-center">
                 <link.icon className="w-5 h-5" />
               </div>
               <span className="hidden sm:block text-[9px] uppercase tracking-[0.2em] opacity-0 group-hover:opacity-100 transition-opacity duration-300 -translate-y-2 group-hover:translate-y-0 h-0 overflow-visible absolute mt-16">
@@ -72,7 +74,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="mt-4 text-dim/60 font-light text-xs tracking-wide">
-          <p>&copy; {new Date().getFullYear()} Traveler, Palate explorer & Father.</p>
+          <p>&copy; {currentYear} Andrew Chen. All Rights Reserved.</p>
           <p className="mt-2 opacity-50">Designed for the curious.</p>
         </div>
       </div>

@@ -2,15 +2,15 @@ import React from 'react';
 
 const BrandPartnership: React.FC = () => {
   return (
-    <section className="py-32 px-6 relative overflow-hidden">
-      {/* Background Glow */}
-      <div className="absolute bottom-[-20%] left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-neon-blue/10 blur-[120px] rounded-full pointer-events-none"></div>
+    <section id="partnerships" className="py-32 px-6 relative overflow-hidden">
+      {/* Background Glow - Warmer */}
+      <div className="absolute bottom-[-20%] left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-neon-gold/5 blur-[120px] rounded-full pointer-events-none"></div>
 
       <div className="max-w-3xl mx-auto relative z-10">
         {/* Glassmorphism Card Container */}
-        <div className="relative bg-white/5 backdrop-blur-xl border-t border-neon-blue/50 rounded-3xl p-8 md:p-16 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+        <div className="relative bg-white/5 backdrop-blur-xl border-t border-neon-gold/50 rounded-3xl p-8 md:p-16 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
            {/* Top glowing line accent */}
-           <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-neon-blue to-transparent opacity-80 shadow-[0_0_10px_rgba(6,182,212,0.8)]"></div>
+           <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-neon-gold to-transparent opacity-80 shadow-[0_0_10px_rgba(251,191,36,0.8)]"></div>
            
            <div className="text-center mb-14 space-y-2">
              <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-white via-silver to-dim pb-2">
@@ -27,14 +27,14 @@ const BrandPartnership: React.FC = () => {
                  <input 
                     type="text" 
                     placeholder="Name"
-                    className="w-full bg-transparent border-b border-white/10 focus:border-neon-blue text-white py-4 px-2 outline-none transition-all duration-500 placeholder:text-dim/50 font-light focus:shadow-[0_4px_20px_-5px_rgba(6,182,212,0.2)]"
+                    className="w-full bg-transparent border-b border-white/10 focus:border-neon-gold text-white py-4 px-2 outline-none transition-all duration-500 placeholder:text-dim/50 font-light focus:shadow-[0_4px_20px_-5px_rgba(251,191,36,0.2)]"
                  />
                </div>
                <div className="group relative">
                  <input 
                     type="text" 
                     placeholder="Brand / Company"
-                    className="w-full bg-transparent border-b border-white/10 focus:border-neon-blue text-white py-4 px-2 outline-none transition-all duration-500 placeholder:text-dim/50 font-light focus:shadow-[0_4px_20px_-5px_rgba(6,182,212,0.2)]"
+                    className="w-full bg-transparent border-b border-white/10 focus:border-neon-gold text-white py-4 px-2 outline-none transition-all duration-500 placeholder:text-dim/50 font-light focus:shadow-[0_4px_20px_-5px_rgba(251,191,36,0.2)]"
                  />
                </div>
              </div>
@@ -43,7 +43,7 @@ const BrandPartnership: React.FC = () => {
                <input 
                   type="email" 
                   placeholder="Email Address"
-                  className="w-full bg-transparent border-b border-white/10 focus:border-neon-blue text-white py-4 px-2 outline-none transition-all duration-500 placeholder:text-dim/50 font-light focus:shadow-[0_4px_20px_-5px_rgba(6,182,212,0.2)]"
+                  className="w-full bg-transparent border-b border-white/10 focus:border-neon-gold text-white py-4 px-2 outline-none transition-all duration-500 placeholder:text-dim/50 font-light focus:shadow-[0_4px_20px_-5px_rgba(251,191,36,0.2)]"
                />
              </div>
 
@@ -51,7 +51,7 @@ const BrandPartnership: React.FC = () => {
                <textarea 
                   rows={1}
                   placeholder="Vision (Message)"
-                  className="w-full bg-transparent border-b border-white/10 focus:border-neon-blue text-white py-4 px-2 outline-none transition-all duration-500 placeholder:text-dim/50 font-light resize-none h-auto min-h-[60px] focus:shadow-[0_4px_20px_-5px_rgba(6,182,212,0.2)]"
+                  className="w-full bg-transparent border-b border-white/10 focus:border-neon-gold text-white py-4 px-2 outline-none transition-all duration-500 placeholder:text-dim/50 font-light resize-none h-auto min-h-[60px] focus:shadow-[0_4px_20px_-5px_rgba(251,191,36,0.2)]"
                   onInput={(e) => {
                     e.currentTarget.style.height = 'auto';
                     e.currentTarget.style.height = e.currentTarget.scrollHeight + 'px';
@@ -62,7 +62,7 @@ const BrandPartnership: React.FC = () => {
              <div className="pt-8 flex justify-center">
                <button 
                  type="button"
-                 className="px-12 py-4 rounded-full bg-gradient-to-r from-cyan-600 to-emerald-600 text-white text-sm font-semibold tracking-widest uppercase transition-all duration-300 hover:shadow-[0_0_25px_rgba(6,182,212,0.6)] hover:scale-105 active:scale-95 border border-white/10"
+                 className="px-12 py-4 rounded-full bg-gradient-to-r from-neon-gold to-orange-600 text-white text-sm font-semibold tracking-widest uppercase transition-all duration-300 hover:shadow-[0_0_25px_rgba(251,191,36,0.6)] hover:scale-105 active:scale-95 border border-white/10"
                >
                  Connect
                </button>
