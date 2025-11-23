@@ -32,7 +32,7 @@ const Navigation: React.FC = () => {
         className="fixed top-8 right-8 z-50 w-12 h-12 flex items-center justify-center rounded-full bg-white/5 backdrop-blur-md border border-white/10 hover:border-neon-gold/50 transition-all duration-300 group shadow-lg"
         aria-label="Toggle Menu"
       >
-        <div className="relative w-5 h-3.5 flex flex-col justify-between items-end overflow-hidden">
+        <div className="relative w-5 h-3.5 flex flex-col justify-between items-center overflow-hidden">
           <span className={`w-full h-0.5 bg-silver rounded-full transition-all duration-300 ease-out group-hover:bg-neon-gold ${isOpen ? 'rotate-45 translate-y-1.5' : ''}`} />
           <span className={`w-full h-0.5 bg-silver rounded-full transition-all duration-300 ease-out group-hover:bg-neon-gold ${isOpen ? 'opacity-0 translate-x-full' : 'opacity-100'}`} />
           <span className={`w-full h-0.5 bg-silver rounded-full transition-all duration-300 ease-out group-hover:bg-neon-gold ${isOpen ? '-rotate-45 -translate-y-1.5' : ''}`} />
@@ -108,8 +108,7 @@ const Navigation: React.FC = () => {
         </div>
 
         {/* Mobile Footer Info */}
-        <div className="md:hidden absolute bottom-12 left-6 right-6 flex justify-between text-xs text-dim border-t border-white/5 pt-6">
-           <span>Est. 2015</span>
+        <div className="md:hidden absolute bottom-12 left-6 right-6 flex justify-end text-xs text-dim border-t border-white/5 pt-6">
            <span>Kyoto, JP</span>
         </div>
       </div>
