@@ -1,0 +1,42 @@
+---
+import Icon from './Icon.astro';
+const socials = [
+  { name: 'Instagram', icon: 'instagram', url: 'https://instagram.com/atypicalpalate' },
+  { name: 'Threads', icon: 'threads', url: 'https://threads.net/@atypicalpalate' },
+  { name: 'TikTok', icon: 'tiktok', url: 'https://tiktok.com/@atypicalpalate' },
+  { name: 'YouTube', icon: 'youtube', url: 'https://www.youtube.com/atypicalpalate' },
+  { name: 'Facebook', icon: 'facebook', url: 'https://facebook.com/atypicalpalate' },
+  { name: 'Spotify', icon: 'spotify', url: 'https://open.spotify.com/user/atypicalpalate' },
+];
+const year = new Date().getFullYear();
+---
+<footer id="follow" class="foot">
+  <div class="container inner">
+    <span class="h3">A Typical Palate</span>
+    <ul class="socials" aria-label="Follow A Typical Palate">
+      {socials.map((s) => (
+        <li>
+          <a class="social glow" href={s.url} target="_blank" rel="noopener noreferrer">
+            <span class="mark"><Icon name={s.icon} size={18} /></span>
+            <span class="glow-title">{s.name}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+    <div class="legal small">
+      <p>&copy; {year} Andrew Chen. All Rights Reserved.</p>
+      <p>Designed for the curious.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .foot { margin-top: var(--space-64); border-top: 1px solid var(--color-border); }
+  .inner { display: flex; flex-direction: column; align-items: center; gap: var(--space-32); padding-block: 48px; text-align: center; }
+  .socials { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-12); }
+  .social { display: inline-flex; align-items: center; gap: var(--space-8); min-height: 44px; padding: 10px var(--space-16) 10px 10px; border-radius: var(--radius-pill); background: var(--color-surface); border: 1px solid var(--color-border); color: var(--color-text); text-decoration: none; }
+  .social:hover { color: var(--color-text-strong); }
+  .mark { width: 28px; height: 28px; border-radius: var(--radius-pill); background: var(--color-brand-tint); color: var(--color-brand-on-tint); display: inline-flex; align-items: center; justify-content: center; }
+  .legal p { margin: 0; }
+  .legal { display: flex; flex-direction: column; gap: 6px; }
+</style>

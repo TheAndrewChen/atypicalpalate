@@ -1,0 +1,12 @@
+---
+// Award badge: full text from Award History, linked to the official listing.
+// Michelin = white fill + star; 50 Best = dark amber + trophy. Differs by lightness and icon, not hue alone.
+import Icon from './Icon.astro';
+interface Props { award: string; list: 'michelin' | '50best' | string; source?: string; short?: string }
+const { award, list, source, short } = Astro.props;
+const is50 = list === '50best';
+const Tag = source ? 'a' : 'span';
+---
+<Tag class:list={['chip', is50 ? 'badge-50best' : 'badge-michelin']} href={source} title={short ? award : undefined}>
+  <Icon name={is50 ? 'trophy' : 'star'} />{short ?? award}
+</Tag>

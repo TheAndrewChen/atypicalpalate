@@ -1,0 +1,201 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import AwardBadge from '../components/AwardBadge.astro';
+import awards from '../data/boston-awards.json';
+import posts from '../data/posts.json';
+
+type Place = (typeof awards.places)[number];
+type Post = { title: string; dek: string; pillar: 'Taste' | 'Travel' | 'Family'; date: string; minutes: number; url: string; image?: string; imageAlt?: string };
+
+const byName = (n: string) => awards.places.find((p) => p.name === n) as Place;
+// Hero map: a stylized panel, not a real map. Positions are illustrative.
+const pins = [
+  { place: byName('Sumiao Hunan Kitchen'), x: '5%', y: '40px' },
+  { place: byName('Hecate Bar'), x: '40%', y: '128px' },
+  { place: byName('Fox & The Knife'), x: '8%', y: '236px' },
+];
+const featured = byName('311 Omakase');
+const shortList = [byName('311 Omakase'), byName('Hecate Bar'), byName('Fox & The Knife')];
+
+const listTop = awards.places.slice(0, 8);
+const listRest = awards.places.slice(8);
+const latest = (posts as Post[]).slice(0, 3);
+const pillarIcon = { Taste: 'taste', Travel: 'travel', Family: 'family' } as const;
+const snapshot = new Date(awards.snapshot + 'T12:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+---
+<Base>
+  <!-- 1 · Hero -->
+  <section class="container hero" aria-labelledby="hero-h">
+    <div class="hero-copy">
+      <span class="label">Everyday favorites. Extraordinary finds.</span>
+      <h1 id="hero-h" class="display">Boston's award lists, one table at a time.</h1>
+      <p class="lede">Michelin and 50 Best are a lens, not a scoreboard. Every Boston pick lives on one list, and I tell you which ones are worth the trip once I've been.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#list">See the Boston list</a>
+        <a class="btn btn-secondary" href="#finds">Read the latest finds</a>
+      </div>
+    </div>
+
+    <div class="map" aria-label="Sample of Boston award picks">
+      {pins.map(({ place, x, y }) => (
+        <div class="pin" style={`left:${x};top:${y}`}>
+          <AwardBadge award={place.award} list={place.list} />
+          <span class="dot" aria-hidden="true"></span>
+          <span class="pin-name">{place.name}</span>
+        </div>
+      ))}
+      <a class="card glow feature" href={featured.source}>
+        <span class="h3 glow-title">{featured.name}</span>
+        <span class="small">{featured.type} · {featured.city}</span>
+        <span class="chips">
+          <AwardBadge award={featured.award} list={featured.list} />
+          <span class="chip chip-want"><Icon name="bookmark" />Want to go</span>
+        </span>
+        <span class="small">Opens the official Michelin Guide listing</span>
+      </a>
+      <span class="map-note small">White badge with star: Michelin. Amber badge with trophy: 50 Best.</span>
+    </div>
+
+    <ul class="card mini" aria-label="Sample of Boston award picks">
+      {shortList.map((p) => (
+        <li>
+          <span class="mini-name">{p.name}</span>
+          <AwardBadge award={p.award} list={p.list} source={p.source} />
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <!-- 2 · Latest finds (from src/data/posts.json; empty until the first posts are published) -->
+  <section id="finds" class="container stack" aria-labelledby="finds-h">
+    <div class="row-head">
+      <h2 id="finds-h" class="h2">Latest finds</h2>
+    </div>
+    {latest.length > 0 ? (
+      <div class="grid3">
+        {latest.map((p) => (
+          <a class="card glow post" href={p.url}>
+            {p.image && <img src={p.image} alt={p.imageAlt ?? ''} loading="lazy" />}
+            <span class="post-body">
+              <span class="meta">
+                <span class="chip chip-pillar"><Icon name={pillarIcon[p.pillar]} />{p.pillar}</span>
+                <span class="small">{p.date} · {p.minutes} min read</span>
+              </span>
+              <span class="h3 glow-title">{p.title}</span>
+              <span class="muted">{p.dek}</span>
+            </span>
+          </a>
+        ))}
+      </div>
+    ) : (
+      <div class="card empty">
+        <p class="lede">The first write-ups land here soon.</p>
+        <p class="muted">Until then, the day-to-day eating is on <a href="https://instagram.com/atypicalpalate" target="_blank" rel="noopener noreferrer">Instagram</a>.</p>
+      </div>
+    )}
+  </section>
+
+  <!-- 3 · The Boston list (snapshot of Notion Award History) -->
+  <section id="list" class="container stack" aria-labelledby="list-h">
+    <div class="intro">
+      <h2 id="list-h" class="h2">The Boston list</h2>
+      <p class="lede muted">Michelin and 50 Best picks in Boston, Cambridge and Brookline, and where I've eaten so far. Each recognition links to its official listing.</p>
+    </div>
+    <div class="card table">
+      {listTop.map((p) => (
+        <div class="prow">
+          <span class="pname"><span class="pn">{p.name}</span><span class="small">{p.type} · {p.city}</span></span>
+          <span class="paward"><AwardBadge award={p.award} list={p.list} source={p.source} /></span>
+          <span class="chip chip-want"><Icon name="bookmark" />{p.status}</span>
+        </div>
+      ))}
+      <details class="more">
+        <summary>Show all {awards.places.length} picks</summary>
+        {listRest.map((p) => (
+          <div class="prow">
+            <span class="pname"><span class="pn">{p.name}</span><span class="small">{p.type} · {p.city}</span></span>
+            <span class="paward"><AwardBadge award={p.award} list={p.list} source={p.source} /></span>
+            <span class="chip chip-want"><Icon name="bookmark" />{p.status}</span>
+          </div>
+        ))}
+      </details>
+      <p class="small updated">Recognitions as listed on {snapshot}.</p>
+    </div>
+  </section>
+
+  <!-- 4 · Pillars -->
+  <section id="pillars" class="container stack" aria-labelledby="pillars-h">
+    <h2 id="pillars-h" class="h2">What I write about</h2>
+    <div class="grid3">
+      <div class="card pillar">
+        <span class="chip chip-pillar"><Icon name="taste" />Taste</span>
+        <h3 class="h3">Restaurants, cafes and bars</h3>
+        <p class="muted">Boston first. What to order, when to go, and how it compares with the last place that tried it.</p>
+      </div>
+      <div class="card pillar">
+        <span class="chip chip-pillar"><Icon name="travel" />Travel</span>
+        <h3 class="h3">Where to eat when you get there</h3>
+        <p class="muted">Food guides built around what a real day of eating looks like, from the first coffee to the last bar.</p>
+      </div>
+      <div class="card pillar">
+        <span class="chip chip-pillar"><Icon name="family" />Family</span>
+        <h3 class="h3">Eating out with a kid in tow</h3>
+        <p class="muted">Which tables welcome a stroller, what to order for small hands, and trips that work for everyone.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 · Closing call to action: intentionally left out until the CTA decision is made. -->
+</Base>
+
+<style>
+  .stack { display: flex; flex-direction: column; gap: var(--space-24); margin-top: var(--space-64); }
+  .row-head { display: flex; justify-content: space-between; align-items: baseline; gap: var(--space-16); flex-wrap: wrap; }
+  .intro { display: flex; flex-direction: column; gap: var(--space-12); max-width: 62ch; }
+  .grid3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-24); }
+
+  /* Hero */
+  .hero { display: flex; flex-wrap: wrap; gap: 48px; align-items: center; padding-top: var(--space-64); }
+  .hero-copy { flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: var(--space-24); }
+  .hero-copy .lede { max-width: 36ch; }
+  .actions { display: flex; gap: var(--space-12); flex-wrap: wrap; }
+  .map { flex: 1.4 1 520px; min-width: 0; position: relative; height: 560px; border-radius: var(--radius-card); border: 1px solid var(--color-border); background-color: var(--color-surface-sunken); background-image: linear-gradient(var(--map-grid) 1px, transparent 1px), linear-gradient(90deg, var(--map-grid) 1px, transparent 1px); background-size: 48px 48px; overflow: hidden; }
+  .pin { position: absolute; display: flex; flex-direction: column; align-items: center; gap: 6px; max-width: 300px; }
+  .dot { width: 20px; height: 20px; border-radius: var(--radius-pill); background: var(--color-brand); border: 3px solid var(--color-brand-bright); }
+  .pin-name { font-size: 13px; font-weight: 600; color: var(--color-text); }
+  .feature { position: absolute; right: var(--space-16); bottom: 44px; width: min(340px, calc(100% - 32px)); padding: var(--space-20); display: flex; flex-direction: column; gap: 10px; border-color: var(--color-border-strong); color: var(--color-text); text-decoration: none; font-weight: 400; }
+  .chips { display: flex; gap: var(--space-8); flex-wrap: wrap; }
+  .map-note { position: absolute; left: var(--space-16); bottom: 12px; }
+  .mini { display: none; list-style: none; margin: 0; padding: var(--space-8) var(--space-16); width: 100%; }
+  .mini li { display: flex; flex-direction: column; gap: 6px; align-items: flex-start; padding-block: var(--space-12); border-bottom: 1px solid var(--color-border); }
+  .mini li:last-child { border-bottom: 0; }
+  .mini-name { font-family: var(--font-display); font-weight: 700; font-size: 18px; letter-spacing: -0.02em; color: var(--color-text-strong); }
+  @media (max-width: 960px) {
+    .map { display: none; }
+    .mini { display: block; }
+  }
+
+  /* Latest finds */
+  .post { overflow: hidden; display: flex; flex-direction: column; color: var(--color-text); text-decoration: none; font-weight: 400; }
+  .post img { aspect-ratio: 3 / 2; width: 100%; object-fit: cover; }
+  .post-body { padding: var(--space-16); display: flex; flex-direction: column; gap: var(--space-12); }
+  .meta { display: flex; gap: var(--space-8); align-items: center; flex-wrap: wrap; }
+  .empty { padding: var(--space-32); display: flex; flex-direction: column; gap: var(--space-8); }
+  .empty p { margin: 0; }
+
+  /* Boston list */
+  .table { overflow: hidden; }
+  .prow { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-12) var(--space-24); padding: var(--space-16) var(--space-20); border-bottom: 1px solid var(--color-border); }
+  .pname { flex: 1 1 220px; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+  .pn { font-family: var(--font-display); font-weight: 700; font-size: 20px; letter-spacing: -0.02em; color: var(--color-text-strong); }
+  .paward { flex: 2 1 320px; min-width: 0; display: flex; }
+  .paward :global(.chip) { white-space: normal; }
+  .more summary { cursor: pointer; padding: var(--space-16) var(--space-20); font-weight: 600; color: var(--color-brand-bright); text-decoration: underline; text-underline-offset: 3px; border-bottom: 1px solid var(--color-border); min-height: 44px; }
+  .more[open] summary { color: var(--color-text-muted); }
+  .updated { margin: 0; padding: var(--space-16) var(--space-20); }
+
+  /* Pillars */
+  .pillar { padding: var(--space-24); display: flex; flex-direction: column; gap: var(--space-12); align-items: flex-start; }
+  .pillar p { margin: 0; }
+</style>

@@ -1,20 +1,29 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# A Typical Palate — atypicalpalate.com
 
-# Run and deploy your AI Studio app
+Astro + TypeScript, static output, deployed on Vercel. Design tokens come from the
+"A Typical Palate" design system (option C, dark only) and live in `src/styles/global.css`.
 
-This contains everything you need to run your app locally.
+## Run locally
 
-View your app in AI Studio: https://ai.studio/apps/drive/1pU3LgBRYjDqhFfLpQSpeeHkpn8lfup0C
+```
+npm install
+npm run dev      # http://localhost:4321
+npm run build    # writes dist/
+```
 
-## Run Locally
+## Where things live
 
-**Prerequisites:**  Node.js
+| Path | What |
+|---|---|
+| `src/pages/index.astro` | Landing page: hero, latest finds, Boston list, pillars |
+| `src/components/` | Nav (sticky, opaque), Footer (socials + copyright), AwardBadge, Icon |
+| `src/data/boston-awards.json` | Snapshot of Notion Places + Award History (Boston, Cambridge, Brookline). Re-export from Notion; never type awards by hand. |
+| `src/data/posts.json` | Latest finds. Empty until the first posts are published. |
+| `vercel.json` | Tells Vercel to build with Astro. |
 
+## Rules
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+- Awards, ranks and stars come only from Notion Award History or an official source link.
+- Photos: only Dru's own, or ones already in ATP Notion. No stock images.
+- Never color alone: every chip and badge carries an icon and a word; links are underlined.
+- Work on a `cowork/YYYY-MM-DD-slug` branch, open a PR, review the Vercel preview. Never push to `main`.
