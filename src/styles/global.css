@@ -1,0 +1,97 @@
+/* A Typical Palate — tokens from the ATP design system (option C, dark only). */
+:root {
+  color-scheme: dark;
+
+  --color-bg: #0e1413;
+  --color-surface: #182120;
+  --color-surface-sunken: #141c1b;
+  --color-border: #263331;
+  --color-border-strong: #2e3d3b;
+  --color-text: #edebe6;
+  --color-text-strong: #ffffff;
+  --color-text-muted: #a6afad;
+  --color-brand: #0a6e72;            /* peacock: fills only, never text on dark */
+  --color-brand-bright: #3dbdc0;     /* text and lines on dark */
+  --color-brand-tint: #0f3f41;
+  --color-brand-on-tint: #7fd6d8;
+  --color-warm-tint: #3a2a14;
+  --color-warm-on-tint: #f0c27e;
+  --color-warm-border: #6b4a1e;
+  --color-award-michelin-bg: #ffffff;
+  --color-award-michelin-text: #0e1413;
+  --color-on-brand: #ffffff;
+  --map-grid: #1b2524;
+
+  --font-display: "Space Grotesk", Inter, system-ui, sans-serif;
+  --font-body: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --space-4: 4px; --space-8: 8px; --space-12: 12px; --space-16: 16px; --space-20: 20px;
+  --space-24: 24px; --space-32: 32px; --space-40: 40px; --space-64: 64px;
+
+  --radius-card: 14px; --radius-button: 10px; --radius-chip: 6px; --radius-pill: 999px;
+
+  --container: 1200px;
+  --gutter: clamp(16px, 4vw, 40px);
+
+  --shadow-glow: 0 0 0 1px #3dbdc0, 0 0 28px rgba(61, 189, 192, 0.30);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+::selection { background: var(--color-brand); color: var(--color-on-brand); }
+
+a { color: var(--color-brand-bright); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+a:hover { color: var(--color-brand-on-tint); }
+:focus-visible { outline: 2px solid var(--color-brand-bright); outline-offset: 2px; }
+
+.container { max-width: var(--container); margin: 0 auto; padding-inline: var(--gutter); }
+
+/* Type */
+.display, .h2, .h3, .wordmark { font-family: var(--font-display); font-weight: 700; color: var(--color-text-strong); margin: 0; text-wrap: balance; }
+.display { font-size: clamp(44px, 4.8vw, 68px); line-height: 0.98; letter-spacing: -0.03em; }
+.h2 { font-size: clamp(32px, 3vw, 40px); line-height: 1.05; letter-spacing: -0.02em; }
+.h3 { font-size: 24px; line-height: 1.15; letter-spacing: -0.02em; }
+.wordmark { font-size: 20px; line-height: 1; letter-spacing: -0.02em; color: var(--color-brand-bright); text-decoration: none; }
+.lede { font-size: 18px; line-height: 1.5; margin: 0; }
+.small { font-size: 13px; font-weight: 500; color: var(--color-text-muted); }
+.label { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-text-muted); }
+.muted { color: var(--color-text-muted); }
+
+/* Buttons: primary is a fill, secondary is an outline */
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: var(--space-12) var(--space-16); border-radius: var(--radius-button); font-size: 16px; font-weight: 600; text-decoration: none; }
+.btn-primary { background: var(--color-brand); border: 1px solid var(--color-brand); color: var(--color-on-brand); }
+.btn-primary:hover { background: #0c7f84; color: var(--color-on-brand); }
+.btn-secondary { border: 2px solid var(--color-brand-bright); color: var(--color-brand-bright); }
+.btn-secondary:hover { background: var(--color-brand-tint); color: var(--color-brand-on-tint); }
+
+/* Chips and badges: always an icon plus a word */
+.chip { display: inline-flex; align-items: center; gap: var(--space-4); padding: 5px 9px; border-radius: var(--radius-chip); font-size: 13px; font-weight: 600; line-height: 1.2; border: 1px solid transparent; white-space: nowrap; }
+.chip svg { flex: none; }
+.chip-pillar { background: var(--color-brand-tint); color: var(--color-brand-on-tint); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; }
+.chip-want { background: var(--color-surface-sunken); border-color: var(--color-border-strong); color: var(--color-text-muted); }
+.badge-michelin { background: var(--color-award-michelin-bg); color: var(--color-award-michelin-text); gap: 6px; }
+.badge-50best { background: var(--color-warm-tint); border-color: var(--color-warm-border); color: var(--color-warm-on-tint); gap: 6px; }
+a.chip { text-decoration: none; }
+a.badge-michelin:hover { color: var(--color-award-michelin-text); text-decoration: underline; }
+a.badge-50best:hover { color: var(--color-warm-on-tint); text-decoration: underline; }
+
+/* Cards and the hover glow (shadow-glow, hover and focus only) */
+.card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-card); }
+.glow { transition: box-shadow 0.35s ease, border-color 0.35s ease; }
+.glow:hover, .glow:focus-visible { border-color: var(--color-brand-bright); box-shadow: var(--shadow-glow); }
+.glow:hover .glow-title, .glow:focus-visible .glow-title { text-decoration: underline; text-underline-offset: 4px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .glow { transition: none; }
+}

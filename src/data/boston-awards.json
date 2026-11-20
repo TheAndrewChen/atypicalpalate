@@ -1,0 +1,240 @@
+{
+  "snapshot": "2026-11-20",
+  "source": "Notion · ATP HQ · Places joined to Award History (Boston, Cambridge, Brookline). Do not edit by hand; re-export from Notion.",
+  "places": [
+    {
+      "name": "311 Omakase",
+      "city": "Boston",
+      "type": "Restaurant",
+      "status": "Want to go",
+      "award": "1 Star · 2025 · Michelin Guide",
+      "list": "michelin",
+      "source": "https://guide.michelin.com/us/en/massachusetts/boston_2914838/restaurant/311-omakase"
+    },
+    {
+      "name": "The Wig Shop",
+      "city": "Boston",
+      "type": "Bar",
+      "status": "Want to go",
+      "award": "Rank 86 · 2026 · North America's 50 Best Bars",
+      "list": "50best",
+      "source": "https://www.the50.com/bars/best-in-north-america/lists/51-100"
+    },
+    {
+      "name": "Hecate Bar",
+      "city": "Boston",
+      "type": "Bar",
+      "status": "Want to go",
+      "award": "Rank 88 · 2026 · North America's 50 Best Bars",
+      "list": "50best",
+      "source": "https://www.the50.com/bars/best-in-north-america/lists/51-100"
+    },
+    {
+      "name": "Bar Volpe",
+      "city": "Boston",
+      "type": "Restaurant",
+      "status": "Want to go",
+      "award": "Bib Gourmand · 2025 · Michelin Guide",
+      "list": "michelin",
+      "source": "https://guide.michelin.com/us/en/massachusetts/boston_2914838/restaurant/bar-volpe"
+    },
+    {
+      "name": "Fox & The Knife",
+      "city": "Boston",
+      "type": "Restaurant",
+      "status": "Want to go",
+      "award": "Bib Gourmand · 2025 · Michelin Guide",
+      "list": "michelin",
+      "source": "https://guide.michelin.com/us/en/massachusetts/boston_2914838/restaurant/fox-the-knife"
+    },
+    {
+      "name": "Jahunger",
+      "city": "Cambridge",
+      "type": "Restaurant",
+      "status": "Want to go",
+      "award": "Bib Gourmand · 2025 · Michelin Guide",
+      "list": "michelin",
+      "source": "https://guide.michelin.com/us/en/massachusetts/cambridge_2914793/restaurant/jahunger"
+    },
+    {
+      "name": "Mahaniyom",
+      "city": "Brookline",
+      "type": "Restaurant",
+      "status": "Want to go",
+      "award": "Bib Gourmand · 2025 · Michelin Guide",
+      "list": "michelin",
+      "source": "https://guide.michelin.com/us/en/massachusetts/brookline_2914829/restaurant/mahaniyom"
+    },
+    {
+      "name": "Pagu",
+      "city": "Cambridge",
+      "type": "Restaurant",
+      "status": "Want to go",
+      "award": "Bib Gourmand · 2025 · Michelin Guide",
+      "list": "michelin",
+      "source": "https://guide.michelin.com/us/en/massachusetts/cambridge_2914793/restaurant/pagu"
+    },
+    {
+      "name": "Sumiao Hunan Kitchen",
+      "city": "Cambridge",
+      "type": "Restaurant",
+      "status": "Want to go",
+      "award": "Bib Gourmand · 2025 · Michelin Guide",
+      "list": "michelin",
+      "source": "https://guide.michelin.com/us/en/massachusetts/cambridge_2914793/restaurant/sumiao-hunan-kitchen"
+    },
+    {
+      "name": "Carmelina's",
+      "city": "Boston",
+      "type": "Restaurant",
+      "status": "Want to go",
+      "award": "Michelin Selected · 2025 · Michelin Guide",
+      "list": "michelin",
+      "source": "https://guide.michelin.com/us/en/massachusetts/boston_2914838/restaurant/carmelina-s"
+    },
+    {
+      "name": "Neptune Oyster",
+      "city": "Boston",
+      "type": "Restaurant",
+      "status": "Want to go",
+      "award": "Michelin Selected · 2025 · Michelin Guide",
+      "list": "michelin",
+      "source": "https://guide.michelin.com/us/en/massachusetts/boston_2914838/restaurant/neptune-oyster"
+    },
+    {
+      "name": "Pammy's",
+      "city": "Cambridge",
+      "type": "Restaurant",
+      "status": "Want to go",
+      "award": "Michelin Selected · 2025 · Michelin Guide",
+      "list": "michelin",
+      "source": "https://guide.michelin.com/us/en/massachusetts/cambridge_2914793/restaurant/pammy-s"
+    },
+    {
+      "name": "Select Oyster Bar",
+      "city": "Boston",
+      "type": "Restaurant",
+      "status": "Want to go",
+      "award": "Michelin Selected · 2025 · Michelin Guide",
+      "list": "michelin",
+      "source": "https://guide.michelin.com/us/en/massachusetts/boston_2914838/restaurant/select-oyster-bar"
+    },
+    {
+      "name": "Zhi Wei Cafe",
+      "city": "Boston",
+      "type": "Restaurant",
+      "status": "Want to go",
+      "award": "Michelin Selected · 2025 · Michelin Guide",
+      "list": "michelin",
+      "source": "https://guide.michelin.com/us/en/massachusetts/boston_2914838/restaurant/zhi-wei-cafe"
+    },
+    {
+      "name": "Asta",
+      "city": "Boston",
+      "type": "Restaurant",
+      "status": "Want to go",
+      "award": "Michelin Selected · Michelin Guide",
+      "list": "michelin",
+      "source": "https://guide.michelin.com/us/en/massachusetts/boston_2914838/restaurant/asta"
+    },
+    {
+      "name": "Giulia",
+      "city": "Cambridge",
+      "type": "Restaurant",
+      "status": "Want to go",
+      "award": "Michelin Selected · Michelin Guide",
+      "list": "michelin",
+      "source": "https://guide.michelin.com/us/en/massachusetts/cambridge_2914793/restaurant/giulia-1218584"
+    },
+    {
+      "name": "La Padrona",
+      "city": "Boston",
+      "type": "Restaurant",
+      "status": "Want to go",
+      "award": "Michelin Selected · Michelin Guide",
+      "list": "michelin",
+      "source": "https://guide.michelin.com/us/en/massachusetts/boston_2914838/restaurant/la-padrona"
+    },
+    {
+      "name": "Lenox Sophia",
+      "city": "Boston",
+      "type": "Restaurant",
+      "status": "Want to go",
+      "award": "Michelin Selected · Michelin Guide",
+      "list": "michelin",
+      "source": "https://guide.michelin.com/us/en/massachusetts/boston_2914838/restaurant/lenox-sophia"
+    },
+    {
+      "name": "Mooncusser",
+      "city": "Boston",
+      "type": "Restaurant",
+      "status": "Want to go",
+      "award": "Michelin Selected · Michelin Guide",
+      "list": "michelin",
+      "source": "https://guide.michelin.com/us/en/massachusetts/boston_2914838/restaurant/mooncusser"
+    },
+    {
+      "name": "Moëca",
+      "city": "Cambridge",
+      "type": "Restaurant",
+      "status": "Want to go",
+      "award": "Michelin Selected · Michelin Guide",
+      "list": "michelin",
+      "source": "https://guide.michelin.com/us/en/massachusetts/cambridge_2914793/restaurant/moeca"
+    },
+    {
+      "name": "Oleana",
+      "city": "Cambridge",
+      "type": "Restaurant",
+      "status": "Want to go",
+      "award": "Michelin Selected · Michelin Guide",
+      "list": "michelin",
+      "source": "https://guide.michelin.com/us/en/massachusetts/cambridge_2914793/restaurant/oleana"
+    },
+    {
+      "name": "Somaek",
+      "city": "Boston",
+      "type": "Restaurant",
+      "status": "Want to go",
+      "award": "Michelin Selected · Michelin Guide",
+      "list": "michelin",
+      "source": "https://guide.michelin.com/us/en/massachusetts/boston_2914838/restaurant/somaek"
+    },
+    {
+      "name": "Toro",
+      "city": "Boston",
+      "type": "Restaurant",
+      "status": "Want to go",
+      "award": "Michelin Selected · Michelin Guide",
+      "list": "michelin",
+      "source": "https://guide.michelin.com/us/en/massachusetts/boston_2914838/restaurant/toro"
+    },
+    {
+      "name": "Urban Hearth",
+      "city": "Cambridge",
+      "type": "Restaurant",
+      "status": "Want to go",
+      "award": "Michelin Selected · Michelin Guide",
+      "list": "michelin",
+      "source": "https://guide.michelin.com/us/en/massachusetts/cambridge_2914793/restaurant/urban-hearth"
+    },
+    {
+      "name": "Wa Shin",
+      "city": "Boston",
+      "type": "Restaurant",
+      "status": "Want to go",
+      "award": "Michelin Selected · Michelin Guide",
+      "list": "michelin",
+      "source": "https://guide.michelin.com/us/en/massachusetts/boston_2914838/restaurant/wa-shin"
+    },
+    {
+      "name": "Woods Hill Pier 4",
+      "city": "Boston",
+      "type": "Restaurant",
+      "status": "Want to go",
+      "award": "Michelin Selected · Michelin Guide",
+      "list": "michelin",
+      "source": "https://guide.michelin.com/us/en/massachusetts/boston_2914838/restaurant/woods-hill-pier-4"
+    }
+  ]
+}
